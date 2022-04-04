@@ -1,3 +1,8 @@
 secret-data.txt
 http_ca.crt
 abwiki-20220328-cirrussearch-content.json
+node_modules
+elasticsearch-8.1.2
+kibana-8.1.2
+elasticsearch-8.1.2-linux-x86_64.tar.gz
+kibana-8.1.2-linux-x86_64.tar.gz
