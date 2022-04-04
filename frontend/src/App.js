@@ -1,14 +1,13 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import theme from './utils/theme';
-import {H1_mobile} from './utils/fonts';
+import Logo from './components/Logo';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <H1_mobile as='h1'>
-        WikiSearch
-      </H1_mobile>
+      <Logo setBackgroundColor={theme.colors.darkBlue} 
+            setWidth={'100%'} setHeight={'200px'} setFontSize={'64px'} />
     </ThemeProvider>
   );
 }
