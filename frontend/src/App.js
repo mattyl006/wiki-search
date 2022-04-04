@@ -1,10 +1,15 @@
 import React from 'react';
+import {ThemeProvider} from 'styled-components';
+import theme from './utils/theme';
+import {H1_mobile} from './utils/fonts';
 
 function App() {
   return (
-    <>
-      <h1>Hello WikiSearch!</h1>
-    </>
+    <ThemeProvider theme={theme}>
+      <H1_mobile>
+        WikiSearch
+      </H1_mobile>
+    </ThemeProvider>
   );
 }
 
