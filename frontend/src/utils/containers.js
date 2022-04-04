@@ -10,6 +10,8 @@ const sets = styled.div`
   max-height: ${({setMaxHeight}) => setMaxHeight ? setMaxHeight : 'auto'};
   min-height: ${({setMinHeight}) => setMinHeight ? setMinHeight : 'auto'};
   background-color: ${({setBackgroundColor}) => setBackgroundColor ? setBackgroundColor : 'transparent'};
+  border-radius: ${({setBorderRadius}) => setBorderRadius ? setBorderRadius : '0'};
+  box-shadow: ${({shadow}) => shadow ? '0 4px 4px rgba(30, 30, 30, 0.25)' : 'none'};
 `;
 
 const FlexRow = styled(sets)`
