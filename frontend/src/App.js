@@ -6,7 +6,7 @@ import {H1_mobile} from './utils/fonts';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <H1_mobile>
+      <H1_mobile as='h1'>
         WikiSearch
       </H1_mobile>
     </ThemeProvider>
