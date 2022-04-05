@@ -27,4 +27,10 @@ const FlexColumn = styled(FlexRow)`
   flex-direction: column;
 `;
 
-export {Container, FlexRow, FlexColumn};
+const Grid = styled(Container)`
+  display: grid;
+  grid-template-columns: ${({setTemplateColumns}) => setTemplateColumns ? setTemplateColumns : 'auto'};
+  grid-template-rows: ${({setTemplateRows}) => setTemplateRows ? setTemplateRows : 'auto'};
+`;
+
+export {Container, FlexRow, FlexColumn, Grid};
