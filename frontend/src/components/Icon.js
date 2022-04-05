@@ -22,7 +22,7 @@ const Image = styled.img`
 function Icon(props) {
     return (
         <Image src={props.src} alt={props.alt} animation={props.animation}
-       setWidth={props.setWidth} setHeight={props.setHeight} />
+               setWidth={props.setWidth} setHeight={props.setHeight} />
     );
 };
 

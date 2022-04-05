@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const sets = styled.div`
+const sets = styled.span`
   padding: ${({setPadding}) => setPadding ? setPadding : '0'};
   margin: ${({setMargin}) => setMargin ? setMargin : '0'};
 `;

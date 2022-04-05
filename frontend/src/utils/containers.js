@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const sets = styled.div`
+const Container = styled.div`
   padding: ${({setPadding}) => setPadding ? setPadding : '0'};
   margin: ${({setMargin}) => setMargin ? setMargin : '0'};
   width: ${({setWidth}) => setWidth ? setWidth : 'auto'};
@@ -12,11 +12,14 @@ const sets = styled.div`
   background-color: ${({setBackgroundColor}) => setBackgroundColor ? setBackgroundColor : 'transparent'};
   border-radius: ${({setBorderRadius}) => setBorderRadius ? setBorderRadius : '0'};
   box-shadow: ${({shadow}) => shadow ? '0 4px 4px rgba(30, 30, 30, 0.25)' : 'none'};
+  gap: ${({setGap}) => setGap ? setGap : '0'};
+  border: ${({setBorder}) => setBorder ? setBorder : 'none'};
+  cursor: ${({setCursor}) => setCursor ? setCursor : 'auto'};
 `;
 
-const FlexRow = styled(sets)`
+const FlexRow = styled(Container)`
   display: flex;
-  justify-content: center;
+  justify-content: ${({alignment}) => alignment ? alignment : 'center'};
   align-items: center;
 `;
 
@@ -24,4 +27,4 @@ const FlexColumn = styled(FlexRow)`
   flex-direction: column;
 `;
 
-export {FlexRow, FlexColumn};
+export {Container, FlexRow, FlexColumn};
