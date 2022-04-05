@@ -3,6 +3,9 @@ import styled from 'styled-components';
 const sets = styled.span`
   padding: ${({setPadding}) => setPadding ? setPadding : '0'};
   margin: ${({setMargin}) => setMargin ? setMargin : '0'};
+  display: ${({setDisplay}) => setDisplay ? setDisplay : 'block'};
+  opacity: ${({setOpacity}) => setOpacity ? setOpacity : '1'};
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const H1_mobile = styled(sets)`

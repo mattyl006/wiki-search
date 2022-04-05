@@ -30,7 +30,7 @@ function Search(props) {
             <Icon src={polygon} setWidth={'12px'} setHeight={'8px'} />
           </Button>
           <Input as='input' />
-          <Button setWidth={'32px'} setHeight={'100%'} action={() => console.log('elo')}
+          <Button setWidth={'32px'} setHeight={'100%'} action={props.action}
                   setBackgroundColor={theme.colors.light3} setBorderRadius={'0 4px 4px 0'}>
             <Icon src={search} setWidth={'16px'} setHeight={'16px'} />
           </Button>
