@@ -10,6 +10,7 @@ import Button from './components/Button';
 import Media from "react-media";
 import {FlexColumn, FlexRow, Grid} from './utils/containers';
 import {H2, Text_button} from './utils/fonts';
+import Category from './components/Category';
 
 class App extends React.Component {
   state = {
@@ -118,6 +119,12 @@ class App extends React.Component {
               setWidth={'400px'} setHeight={'100px'} setFontSize={'48px'} />
         <Search setMargin={'64px 0 24px 0'} setWidth={'940px'} setMaxWidth={'90%'} 
                 setHeight={'64px'} action={this.queryAction} />
+        <FlexRow setGap={'32px'}>
+          <Category name={'category 1'} />
+          <Category name={'category 2'} />
+          <Category name={'category 3'} />
+          <Category name={'category 4'} />
+        </FlexRow>
       </FlexColumn>
     );
   }
