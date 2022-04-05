@@ -17,6 +17,7 @@ const Container = styled.div`
   cursor: ${({setCursor}) => setCursor ? setCursor : 'auto'};
   display: ${({setDisplay}) => setDisplay ? setDisplay : 'block'};
   opacity: ${({setOpacity}) => setOpacity ? setOpacity : '1'};
+  outline: ${({setOutline}) => setOutline ? setOutline : 'none'};
   transition: opacity 0.3s ease-in-out;
 `;
 

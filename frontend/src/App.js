@@ -9,7 +9,7 @@ import Article from './components/Article';
 import Button from './components/Button';
 import Media from "react-media";
 import {FlexColumn, FlexRow, Grid} from './utils/containers';
-import {H2_mobile, Text_button_mobile} from './utils/fonts';
+import {H2, Text_button} from './utils/fonts';
 
 class App extends React.Component {
   state = {
@@ -68,9 +68,9 @@ class App extends React.Component {
     });
   }
 
-  resultsRender() {
+  resultsRender(prefix) {
     return (
-      [...Array(10)].map((e, i) => <Article />)
+      [...Array(10)].map((e, i) => <Article key={`${prefix} ${i}`} />)
     );
   }
 
@@ -85,29 +85,40 @@ class App extends React.Component {
         </FlexColumn>
         <FlexRow>
           <FlexColumn>
-            <H2_mobile onClick={this.queryAction}
+            <H2 onClick={this.queryAction}
                        setDisplay={this.state.searchLabel.display}
                        setOpacity={this.state.searchLabel.opacity}
                        setMargin={'0 0 48px 0'}>
               Let's search!
-            </H2_mobile>
+            </H2>
             <Icon src={document} alt={'Document icon.'} 
                   setWidth={'90px'} setHeight={'90px'}
                   setDisplay={this.state.documentIcon.display} 
                   animation={this.state.documentIcon.animation} />
-            {this.state.results.page1 ? this.resultsRender() : ''}
+            {this.state.results.page1 ? this.resultsRender('page1') : ''}
             {this.state.results.page1 && !this.state.results.page2 
               ? <Button setBorderRadius={'4px'} setMargin={'8px 0 32px 0'} 
                         action={this.showMoreResults} setBackgroundColor={theme.colors.light2}
                         setWidth={'160px'} setHeight={'32px'}>
-                <Text_button_mobile>
+                <Text_button>
                   See more
-                </Text_button_mobile>
+                </Text_button>
               </Button> : ''}
-            {this.state.results.page2 ? this.resultsRender() : ''}
+            {this.state.results.page2 ? this.resultsRender('page2') : ''}
           </FlexColumn>
         </FlexRow>
       </Grid>
+    );
+  }
+
+  desktopRender() {
+    return (
+      <FlexColumn setWidth={'100%'} setMinHeight={'100vh'}>
+        <Logo setBackgroundColor={theme.colors.darkBlue} 
+              setWidth={'400px'} setHeight={'100px'} setFontSize={'48px'} />
+        <Search setMargin={'64px 0 24px 0'} setWidth={'940px'} setMaxWidth={'90%'} 
+                setHeight={'64px'} action={this.queryAction} />
+      </FlexColumn>
     );
   }
 
@@ -116,6 +127,9 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Media query={theme.mobile}>
           {this.mobileRender()}
+        </Media>
+        <Media query={theme.desktop}>
+          {this.desktopRender()}
         </Media>
       </ThemeProvider>
     );
