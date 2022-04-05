@@ -22,14 +22,14 @@ const Container = styled.div`
 `;
 
 const FlexRow = styled(Container)`
-  display: flex;
+  display: ${({setDisplay}) => setDisplay ? setDisplay : 'flex'};
   justify-content: ${({alignment}) => alignment ? alignment : 'center'};
-  align-items: center;
+  align-items: ${({alignmentY}) => alignmentY ? alignmentY : 'center'};
 `;
 
 const FlexColumn = styled(FlexRow)`
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${({alignmentY}) => alignmentY ? alignmentY : 'center'};
   align-items: ${({alignment}) => alignment ? alignment : 'center'};
 `;
 

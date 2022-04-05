@@ -21,7 +21,8 @@ const BouncingIcon = styled(Container)`
 function Icon(props) {
     return (
         <BouncingIcon as={'img'} src={props.src} alt={props.alt} animation={props.animation}
-               setWidth={props.setWidth} setHeight={props.setHeight} setDisplay={props.setDisplay} />
+               setMargin={props.setMargin} setDisplay={props.setDisplay}
+               setWidth={props.setWidth} setHeight={props.setHeight} />
     );
 };
 

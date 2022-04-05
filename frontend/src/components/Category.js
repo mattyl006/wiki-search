@@ -8,7 +8,7 @@ function Category(props) {
             <Container setWidth={'16px'} setHeight={'16px'}
                        as={'input'} type={'checkbox'} 
                        id={props.name} name={props.name} />
-            <Text_strong as={'label'} for={props.name}>
+            <Text_strong as={'label'} htmlFor={props.name}>
                 {props.name}
             </Text_strong>
         </FlexRow>
