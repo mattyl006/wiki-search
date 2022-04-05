@@ -25,12 +25,12 @@ function Search(props) {
       <FlexRow setWidth={props.setWidth} setHeight={props.setHeight} shadow
                setBorderRadius={'4px'} setBackgroundColor={theme.colors.light1}
                alignment='space-between' setMargin={props.setMargin}>
-          <Button setWidth={'32px'} setHeight={'100%'} 
+          <Button setWidth={'32px'} setHeight={'100%'}
                   setBackgroundColor={theme.colors.light3} setBorderRadius={'4px 0 0 4px'}>
             <Icon src={polygon} setWidth={'12px'} setHeight={'8px'} />
           </Button>
           <Input as='input' />
-          <Button setWidth={'32px'} setHeight={'100%'} 
+          <Button setWidth={'32px'} setHeight={'100%'} action={() => console.log('elo')}
                   setBackgroundColor={theme.colors.light3} setBorderRadius={'0 4px 4px 0'}>
             <Icon src={search} setWidth={'16px'} setHeight={'16px'} />
           </Button>

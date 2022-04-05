@@ -6,7 +6,8 @@ import Icon from './components/Icon';
 import document from './assets/document.svg';
 import Search from './components/Search';
 import Media from "react-media";
-import {FlexColumn, Grid} from './utils/containers';
+import {FlexColumn, FlexRow, Grid} from './utils/containers';
+import {H2_mobile} from './utils/fonts';
 
 function App() {
   return (
@@ -18,9 +19,15 @@ function App() {
               setWidth={'100%'} setHeight={'200px'} setFontSize={'64px'} />
               <Search setMargin={'32px 0 0 0'} setWidth={'90%'} setHeight={'52px'} />
           </FlexColumn>
-          <div>
-            elo
-          </div>
+          <FlexRow>
+            <FlexColumn onClick={() => console.log('elo')}>
+              <H2_mobile setMargin={'0 0 48px 0'}>
+                Let's search!
+              </H2_mobile>
+              <Icon src={document} alt={'Document icon.'} 
+                    setWidth={'90px'} setHeight={'90px'} />
+            </FlexColumn>
+          </FlexRow>
         </Grid>
       </Media>
     </ThemeProvider>
