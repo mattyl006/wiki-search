@@ -1,14 +1,7 @@
 import styled from 'styled-components';
+import { Container } from './containers';
 
-const sets = styled.span`
-  padding: ${({setPadding}) => setPadding ? setPadding : '0'};
-  margin: ${({setMargin}) => setMargin ? setMargin : '0'};
-  display: ${({setDisplay}) => setDisplay ? setDisplay : 'block'};
-  opacity: ${({setOpacity}) => setOpacity ? setOpacity : '1'};
-  transition: opacity 0.3s ease-in-out;
-`;
-
-const H1_mobile = styled(sets)`
+const H1_mobile = styled(Container)`
   font-family: 'Anton', sans-serif;
   font-weight: 400;
   font-size: 64px;
@@ -16,7 +9,7 @@ const H1_mobile = styled(sets)`
   color: ${({theme}) => theme.colors.white};
 `;
 
-const H2_mobile = styled(sets)`
+const H2_mobile = styled(Container)`
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 24px;
@@ -24,7 +17,7 @@ const H2_mobile = styled(sets)`
   color: ${({theme}) => theme.colors.dark};
 `;
 
-const Text_mobile = styled(sets)`
+const Text_mobile = styled(Container)`
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -32,7 +25,7 @@ const Text_mobile = styled(sets)`
   color: ${({theme}) => theme.colors.dark};
 `;
 
-const Text_strong_mobile = styled(sets)`
+const Text_strong_mobile = styled(Container)`
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -40,7 +33,7 @@ const Text_strong_mobile = styled(sets)`
   color: ${({theme}) => theme.colors.dark};
 `;
 
-const Text_button_mobile = styled(sets)`
+const Text_button_mobile = styled(Container)`
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;

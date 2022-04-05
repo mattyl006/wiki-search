@@ -15,6 +15,9 @@ const Container = styled.div`
   gap: ${({setGap}) => setGap ? setGap : '0'};
   border: ${({setBorder}) => setBorder ? setBorder : 'none'};
   cursor: ${({setCursor}) => setCursor ? setCursor : 'auto'};
+  display: ${({setDisplay}) => setDisplay ? setDisplay : 'block'};
+  opacity: ${({setOpacity}) => setOpacity ? setOpacity : '1'};
+  transition: opacity 0.3s ease-in-out;
 `;
 
 const FlexRow = styled(Container)`
@@ -25,6 +28,8 @@ const FlexRow = styled(Container)`
 
 const FlexColumn = styled(FlexRow)`
   flex-direction: column;
+  justify-content: center;
+  align-items: ${({alignment}) => alignment ? alignment : 'center'};
 `;
 
 const Grid = styled(Container)`

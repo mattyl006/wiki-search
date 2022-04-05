@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
+import { Container } from '../utils/containers';
 
 const bouncing = keyframes`
   0% {
@@ -13,16 +14,14 @@ const bouncing = keyframes`
   }
 `;
 
-const Image = styled.img`
-  width: ${({setWidth}) => setWidth ? setWidth : 'auto'};
-  height: ${({setHeight}) => setHeight ? setHeight : 'auto'};
+const BouncingIcon = styled(Container)`
   animation: ${({animation}) => animation ? css`${bouncing} 1s ease-in-out infinite` : 'none'}
 `;
 
 function Icon(props) {
     return (
-        <Image src={props.src} alt={props.alt} animation={props.animation}
-               setWidth={props.setWidth} setHeight={props.setHeight} />
+        <BouncingIcon as={'img'} src={props.src} alt={props.alt} animation={props.animation}
+               setWidth={props.setWidth} setHeight={props.setHeight} setDisplay={props.setDisplay} />
     );
 };
 

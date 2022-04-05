@@ -14,6 +14,7 @@ function Button(props) {
       <ButtonHover as={'button'} setCursor={'pointer'} setGap={props.gap} onClick={props.action}
                    setBackgroundColor={props.setBackgroundColor}
                    setBorderRadius={props.setBorderRadius}
+                   setMargin={props.setMargin}
                    setWidth={props.setWidth} setHeight={props.setHeight}>
         {props.children}
       </ButtonHover>
