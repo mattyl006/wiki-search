@@ -36,6 +36,8 @@ class App extends React.Component {
       animation: false,
       display: 'none'
     },
+    query: 'witcher',
+    api: 'http://localhost:8983/solr/games/'
   }
 
   queryAction = (e) => {
@@ -73,33 +75,11 @@ class App extends React.Component {
 
   queryActionDesktop = (e) => {
     e.preventDefault();
-    setTimeout(() => {
-      this.setState({
-        desktopView: {
-          alignmentY: 'flex-start',
-          logoDisplay: 'none',
-          miniLogoDisplay: 'flex',
-          searchMaxWidth: '70vw',
-        },
-        documentIconDesktop: {
-          animation: true,
-          display: 'block'
-        }
-      });
-    }, 300);
-
-    setTimeout(() => {
-      this.setState({
-        documentIconDesktop: {
-          animation: false,
-          display: 'none'
-        },
-        results: {
-          page1: true,
-          page2: false,
-        }
-      });
-    }, 3000);
+    fetch(`${this.state.api}select?indent=true&q.op=OR&q=name%3A
+           ${this.state.query}%20popular_tags%3A
+           ${this.state.query}%20game_description%3A${this.state.query}&rows=10`)
+    .then(response => response.json())
+    .then(data => console.log(data));
   }
   
   showMoreResults = () => {
