@@ -22,7 +22,8 @@ const desktopRender = (component) => {
                   setWidth={'124px'} setHeight={'72px'} setFontSize={'24px'} />
             <FlexColumn setGap={'20px'}>
               <Search setWidth={'940px'} setMaxWidth={component.state.desktopView.searchMaxWidth} 
-                      setHeight={'64px'} action={(e) => component.queryActionDesktop(e)} />
+                      setHeight={'64px'} action={(e) => component.queryActionDesktop(e)} 
+                      setQuery={(e) => component.setQuery(e)}/>
               <FlexRow setWidth={'940px'} setMaxWidth={component.state.desktopView.searchMaxWidth}  
                        alignment={'flex-start'} setGap={'32px'}>
                 <Category name={'category 1'} />

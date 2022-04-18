@@ -14,8 +14,9 @@ const mobileRender = (component) => {
           <FlexColumn setWidth={'100%'}>
               <Logo setBackgroundColor={theme.colors.darkBlue} 
                     setWidth={'100%'} setHeight={'200px'} setFontSize={'64px'} />
-              <Search setMargin={'32px 0 48px 0'} setWidth={'90%'} 
-                      setHeight={'52px'} action={(e) => component.queryAction(e)} />
+              <Search setMargin={'32px 0 48px 0'} setWidth={'90%'}
+                      setHeight={'52px'} action={(e) => component.queryAction(e)} 
+                      setQuery={(e) => component.setQuery(e)} />
           </FlexColumn>
           <FlexRow>
             <FlexColumn>

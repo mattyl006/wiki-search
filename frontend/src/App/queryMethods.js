@@ -75,4 +75,11 @@ const queryActionDesktop = (component, e) => {
     }, 3000);
 }
 
-export {queryAction, queryActionDesktop};
+const setQuery = (component, e) => {
+  let value = e.target.value;
+  component.setState({
+    query: value
+  });
+}
+
+export {queryAction, queryActionDesktop, setQuery};

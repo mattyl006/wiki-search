@@ -5,7 +5,7 @@ import Article from '../components/Article';
 import Media from "react-media";
 import mobileRender from './mobileRender';
 import desktopRender from './desktopRender';
-import {queryAction, queryActionDesktop} from './queryMethods';
+import {queryAction, queryActionDesktop, setQuery} from './queryMethods';
 
 class App extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class App extends React.Component {
       animation: false,
       display: 'none'
     },
-    query: 'witcher',
+    query: '',
     api: 'http://localhost:8983/solr/games/'
   }
 
@@ -41,6 +41,10 @@ class App extends React.Component {
 
   queryActionDesktop = (e) => {
     queryActionDesktop(this, e);
+  }
+
+  setQuery = (e) => {
+    setQuery(this, e);
   }
   
   showMoreResults = () => {
