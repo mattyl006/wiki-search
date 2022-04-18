@@ -9,8 +9,10 @@ const queryRequest = (component) => {
 
 const queryAction = (component, e) => {
     e.preventDefault();
+    component.setState({
+      query: component.state.queryInput
+    });
     setTimeout(() => {
-      queryRequest(component);
       component.setState({
         searchLabel: {
           display: 'block',
@@ -24,6 +26,7 @@ const queryAction = (component, e) => {
     }, 300);
 
     setTimeout(() => {
+      queryRequest(component);
       component.setState({
         searchLabel: {
           display: 'none',
@@ -39,6 +42,9 @@ const queryAction = (component, e) => {
 
 const queryActionDesktop = (component, e) => {
     e.preventDefault();
+    component.setState({
+      query: component.state.queryInput
+    });
     setTimeout(() => {
       queryRequest(component);
       component.setState({
@@ -67,15 +73,9 @@ const queryActionDesktop = (component, e) => {
 
 const setQuery = (component, e) => {
   let value = e.target.value;
-  if(e.target.value == '') {
-    component.setState({
-      query: '*'
-    });
-  } else {
-    component.setState({
-      query: value
-    });
-  }
+  component.setState({
+    queryInput: value
+  });
 }
 
 export {queryAction, queryActionDesktop, setQuery};

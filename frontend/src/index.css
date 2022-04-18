@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500&family=Roboto:wght@400;500&display=swap");
 
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }

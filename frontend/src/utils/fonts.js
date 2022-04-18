@@ -41,6 +41,11 @@ const Text_strong = styled(Container)`
   font-size: 12px;
   line-height: 12px;
   color: ${({theme}) => theme.colors.dark};
+
+  @media (min-width: ${({theme}) => theme.overMobile}) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 
 const Text_button = styled(Container)`
