@@ -17,10 +17,6 @@ class App extends React.Component {
       animation: false,
       display: 'block'
     },
-    results: {
-      page1: false,
-      page2: false
-    },
     desktopView: {
       aligmentY: 'center',
       logoDisplay: 'flex',
@@ -31,7 +27,8 @@ class App extends React.Component {
       animation: false,
       display: 'none'
     },
-    query: '',
+    query: '*',
+    results: [],
     api: 'http://localhost:8983/solr/games/'
   }
 
@@ -48,17 +45,14 @@ class App extends React.Component {
   }
   
   showMoreResults = () => {
-    this.setState({
-      results: {
-        page1: true,
-        page2: true,
-      }
-    });
+    //
   }
 
   resultsRender(prefix) {
     return (
-      [...Array(10)].map((e, i) => <Article key={`${prefix} ${i}`} />)
+      this.state.results.slice(0, 10).map((result, i) => 
+        <Article key={`${prefix} ${i}`} name={result.name[0]} 
+                 describe={result.game_description[0].slice(0, 500) + '...'} />)
     );
   }
 

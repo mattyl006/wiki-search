@@ -11,20 +11,17 @@ const Line = styled.div`
   background-color: ${({theme}) => theme.colors.blue};
 `;
 
-function Article() {
+function Article(props) {
     return (
         <>
             <Media query={theme.mobile}>
                 <FlexColumn as={'article'} setMaxWidth={'90%'} alignment={'flex-start'} 
                             setMargin={'0 0 24px 0'}>
                     <H2 setMargin={'0 0 12px 0'}>
-                        Article
+                        {props.name}
                     </H2>
                     <Text setMaxWidth={'90%'} setMargin={'0 0 24px 0'}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis pellentesque fringilla tortor quis tincidunt. 
-                        Donec risus tortor, faucibus vel nisi sed, viverra molestie metus. 
-                        Integer ac eleifend ante.
+                        {props.describe}
                     </Text>
                     <Line />
                 </FlexColumn> 
@@ -33,20 +30,10 @@ function Article() {
                 <FlexColumn as={'article'} setMaxWidth={'90%'} alignment={'flex-start'} 
                             setMargin={'0 0 32px 0'}>
                     <H2 setMargin={'0 0 24px 0'}>
-                        Article
+                        {props.name}
                     </H2>
                     <Text setMaxWidth={'90%'} setMargin={'0 0 32px 0'}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis pellentesque fringilla tortor quis tincidunt. 
-                        Donec risus tortor, faucibus vel nisi sed, viverra molestie metus. 
-                        Integer ac eleifend ante. Donec faucibus dictum massa vel fringilla. 
-                        Integer imperdiet mi non arcu lobortis, id feugiat sapien fringilla. 
-                        Pellentesque commodo placerat accumsan. Aenean eget dolor at magna posuere 
-                        pharetra non ut purus. Praesent semper condimentum lorem eu placerat. 
-                        Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                        Etiam a euismod nisl, quis faucibus sapien. Cras id commodo ex. 
-                        Suspendisse convallis maximus augue sed pulvinar. 
-                        Donec efficitur volutpat mattis. Nam sit amet libero dolor.
+                        {props.describe}
                     </Text>
                     <Line />
                 </FlexColumn> 

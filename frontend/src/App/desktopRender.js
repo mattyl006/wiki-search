@@ -39,16 +39,7 @@ const desktopRender = (component) => {
                 setDisplay={component.state.documentIconDesktop.display} 
                 animation={component.state.documentIconDesktop.animation} />
           <FlexColumn alignment={'flex-start'} setWidth={'80%'}>
-            {component.state.results.page1 ? component.resultsRender('page1') : ''}
-            {component.state.results.page1 && !component.state.results.page2 
-              ? <Button setBorderRadius={'4px'} setMargin={'8px 0 32px 0'} 
-                        action={component.showMoreResults} setBackgroundColor={theme.colors.light2}
-                        setWidth={'300px'} setHeight={'48px'}>
-                <Text_button>
-                  See more
-                </Text_button>
-              </Button> : ''}
-            {component.state.results.page2 ? component.resultsRender('page2') : ''}
+            {component.resultsRender('page1')}
           </FlexColumn>
         </FlexColumn>
     );

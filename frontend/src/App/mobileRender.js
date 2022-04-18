@@ -30,16 +30,7 @@ const mobileRender = (component) => {
                     setWidth={'90px'} setHeight={'90px'}
                     setDisplay={component.state.documentIcon.display} 
                     animation={component.state.documentIcon.animation} />
-              {component.state.results.page1 ? component.resultsRender('page1') : ''}
-              {component.state.results.page1 && !component.state.results.page2 
-                ? <Button setBorderRadius={'4px'} setMargin={'8px 0 32px 0'} 
-                          action={component.showMoreResults} setBackgroundColor={theme.colors.light2}
-                          setWidth={'160px'} setHeight={'32px'}>
-                  <Text_button>
-                    See more
-                  </Text_button>
-                </Button> : ''}
-              {component.state.results.page2 ? component.resultsRender('page2') : ''}
+              {component.resultsRender('page1')}
             </FlexColumn>
           </FlexRow>
         </Grid>

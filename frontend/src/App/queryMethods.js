@@ -1,13 +1,16 @@
+const queryRequest = (component) => {
+  fetch(`${component.state.api}select?indent=true&q.op=OR&q=name%3A
+  "${component.state.query}"%20popular_tags%3A
+  "${component.state.query}"%20game_description%3A"${component.state.query}"&rows=10`)
+  .then(response => response.json())
+  .then(data => component.setState({results: data.response.docs}));
+}
+
+
 const queryAction = (component, e) => {
     e.preventDefault();
-    fetch(`${component.state.api}select?indent=true&q.op=OR&q=name%3A
-           ${component.state.query}%20popular_tags%3A
-           ${component.state.query}%20game_description%3A${component.state.query}&rows=10`)
-    .then(response => response.json())
-    .then(data => console.log(data));
-
-    e.preventDefault();
     setTimeout(() => {
+      queryRequest(component);
       component.setState({
         searchLabel: {
           display: 'block',
@@ -29,10 +32,6 @@ const queryAction = (component, e) => {
         documentIcon: {
           animation: false,
           display: 'none'
-        },
-        results: {
-          page1: true,
-          page2: false,
         }
       });
     }, 3000);
@@ -40,13 +39,8 @@ const queryAction = (component, e) => {
 
 const queryActionDesktop = (component, e) => {
     e.preventDefault();
-    fetch(`${component.state.api}select?indent=true&q.op=OR&q=name%3A
-           ${component.state.query}%20popular_tags%3A
-           ${component.state.query}%20game_description%3A${component.state.query}&rows=10`)
-    .then(response => response.json())
-    .then(data => console.log(data));
-
     setTimeout(() => {
+      queryRequest(component);
       component.setState({
         desktopView: {
           alignmentY: 'flex-start',
@@ -66,10 +60,6 @@ const queryActionDesktop = (component, e) => {
         documentIconDesktop: {
           animation: false,
           display: 'none'
-        },
-        results: {
-          page1: true,
-          page2: false,
         }
       });
     }, 3000);
@@ -77,9 +67,15 @@ const queryActionDesktop = (component, e) => {
 
 const setQuery = (component, e) => {
   let value = e.target.value;
-  component.setState({
-    query: value
-  });
+  if(e.target.value == '') {
+    component.setState({
+      query: '*'
+    });
+  } else {
+    component.setState({
+      query: value
+    });
+  }
 }
 
 export {queryAction, queryActionDesktop, setQuery};
