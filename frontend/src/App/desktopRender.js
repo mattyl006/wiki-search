@@ -7,6 +7,7 @@ import Button from '../components/Button';
 import {FlexColumn, FlexRow} from '../utils/containers';
 import {Text_button} from '../utils/fonts';
 import Category from '../components/Category';
+import Pager from '../components/Pager';
 import theme from '../utils/theme';
 
 const desktopRender = (component) => {
@@ -41,6 +42,8 @@ const desktopRender = (component) => {
           <FlexColumn alignment={'flex-start'} setWidth={'80%'}>
             {component.resultsRender('page1')}
           </FlexColumn>
+          {(component.state.results.length !== 0) ? <Pager 
+          resultsLen={component.state.results.length} /> : ''}
         </FlexColumn>
     );
 }

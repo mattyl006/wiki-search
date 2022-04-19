@@ -44,14 +44,10 @@ class App extends React.Component {
   setQuery = (e) => {
     setQuery(this, e);
   }
-  
-  showMoreResults = () => {
-    //
-  }
 
   resultsRender(prefix) {
     return (
-      this.state.results.slice(0, 10).map((result, i) => 
+      this.state.results.slice(0, 10).map((result, i) =>
         <Article key={`${prefix} ${i}`} name={result.name[0]} tags={result.popular_tags[0]}
                  describe={result.game_description[0]} query={this.state.query} />)
     );

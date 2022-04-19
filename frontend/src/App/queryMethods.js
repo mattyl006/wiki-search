@@ -1,11 +1,10 @@
 const queryRequest = (component) => {
   fetch(`${component.state.api}select?indent=true&q.op=OR&q=name%3A
   "${component.state.query}"%20popular_tags%3A
-  "${component.state.query}"%20game_description%3A"${component.state.query}"&rows=10`)
+  "${component.state.query}"%20game_description%3A"${component.state.query}"&rows=100`)
   .then(response => response.json())
   .then(data => component.setState({results: data.response.docs}));
 }
-
 
 const queryAction = (component, e) => {
     e.preventDefault();
