@@ -3,7 +3,10 @@ const queryRequest = (component) => {
   "${component.state.query}"%20popular_tags%3A
   "${component.state.query}"%20game_description%3A"${component.state.query}"&rows=100`)
   .then(response => response.json())
-  .then(data => component.setState({results: data.response.docs}));
+  .then(data => {
+    component.setState({results: data.response.docs}); 
+    console.log(data.response.docs)
+  });
 }
 
 const queryAction = (component, e) => {

@@ -32,6 +32,7 @@ class App extends React.Component {
     results: [],
     api: 'http://localhost:8983/solr/games/',
     pageNr: 1,
+    alphabetSort: false
   }
 
   queryAction = (e) => {
@@ -46,12 +47,26 @@ class App extends React.Component {
     setQuery(this, e);
   }
 
+  setAlphabetSort = (e) => {
+    this.setState({
+      alphabetSort: e.target.checked
+    });
+  }
+
   resultsRender(prefix) {
+    let results = [];
     let n = (this.state.pageNr - 1) * 10;
+    let resultsAlphabetSorted = this.state.results.slice();
+    resultsAlphabetSorted.sort((a, b) => a.name[0] > b.name[0] ? 1 : -1);
+    if(this.state.alphabetSort)
+      results = resultsAlphabetSorted;
+    else results = this.state.results;
     return (
-      this.state.results.slice(n, (n + 10)).map((result, i) =>
+      results.slice(n, (n + 10)).map((result, i) =>
         <Article key={`${prefix} ${i}`} name={result.name[0]} tags={result.popular_tags[0]}
-                 describe={result.game_description[0]} query={this.state.query} />)
+                 describe={result.game_description[0]} 
+                 date={result.release_date[0]} 
+                 query={this.state.query} />)
     );
   }
 

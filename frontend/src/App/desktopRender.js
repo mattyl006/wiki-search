@@ -3,9 +3,7 @@ import Logo from '../components/Logo';
 import Icon from '../components/Icon';
 import document from '../assets/document.svg';
 import Search from '../components/Search';
-import Button from '../components/Button';
 import {FlexColumn, FlexRow} from '../utils/containers';
-import {Text_button} from '../utils/fonts';
 import Category from '../components/Category';
 import Pager from '../components/Pager';
 import theme from '../utils/theme';
@@ -27,10 +25,7 @@ const desktopRender = (component) => {
                       setQuery={(e) => component.setQuery(e)}/>
               <FlexRow setWidth={'940px'} setMaxWidth={component.state.desktopView.searchMaxWidth}  
                        alignment={'flex-start'} setGap={'32px'}>
-                <Category name={'category 1'} />
-                <Category name={'category 2'} />
-                <Category name={'category 3'} />
-                <Category name={'category 4'} />
+                <Category name={'alphabetical sort'} setAlphabetSort={component.setAlphabetSort} />
               </FlexRow>
             </FlexColumn>
           </FlexRow>

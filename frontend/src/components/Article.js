@@ -74,9 +74,12 @@ class Article extends React.Component {
                 <Text setMaxWidth={'90%'} setMargin={'0 0 12px 0'} 
                       dangerouslySetInnerHTML={this.describeShowing()} />
                 {this.moreButtonRender()}
-                <TagText setMargin={'0 0 24px 0'} 
+                <TagText setMargin={'0 0 12px 0'} 
                          dangerouslySetInnerHTML={{__html: 
                          this.textHighlight(this.props.tags.replaceAll(',', ', '))}} />
+                <Text setMargin={'0 0 24px 0'}>
+                    {this.props.date}
+                </Text>
                 <Line />
             </FlexColumn> 
         );
@@ -91,9 +94,12 @@ class Article extends React.Component {
                 <Text dangerouslySetInnerHTML={this.describeShowing()} 
                       setMaxWidth={'90%'} setMargin={'0 0 12px 0'} />
                 {this.moreButtonRender()}
-                <TagText setMargin={'0 0 32px 0'} 
+                <TagText setMargin={'0 0 12px 0'} 
                          dangerouslySetInnerHTML={{__html: 
                          this.textHighlight(this.props.tags.replaceAll(',', ', '))}} />
+                <Text setMargin={'0 0 32px 0'}>
+                    {this.props.date}
+                </Text>
                 <Line />
             </FlexColumn> 
         );

@@ -7,6 +7,7 @@ function Category(props) {
         <FlexRow setGap={'16px'}>
             <Container setWidth={'16px'} setHeight={'16px'}
                        as={'input'} type={'checkbox'} 
+                       onChange={(e) => props.setAlphabetSort(e)}
                        id={props.name} name={props.name} />
             <Text_strong as={'label'} htmlFor={props.name}>
                 {props.name}
