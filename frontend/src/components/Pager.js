@@ -23,43 +23,16 @@ const PagerArrowRight = styled(PagerArrowLeft)`
 `;
 
 class Pager extends React.Component {
-    state = {
-        pageNr: 1,
-    }
-
-    increasePageNr = () => {
-        let pageCount = 0;
-        if(Math.floor(this.props.resultsLen / 10) == 0)
-            pageCount = Math.floor(this.props.resultsLen / 10);
-        else pageCount = Math.floor(this.props.resultsLen / 10) + 1;
-
-        if(this.state.pageNr < pageCount) {
-            let newPageNr = this.state.pageNr + 1;
-            this.setState({
-                pageNr: newPageNr
-            });
-        }
-    }
-
-    decreasePageNr = () => {
-        if(this.state.pageNr > 1) {
-            let newPageNr = this.state.pageNr - 1;
-            this.setState({
-                pageNr: newPageNr
-            });
-        }
-    }
-
     render() {
         return (
             <FlexRow setGap={'20px'}>
-                <PagerButton onClick={this.decreasePageNr}>
+                <PagerButton onClick={this.props.decreasePageNr}>
                     <PagerArrowLeft src={polygon} />
                 </PagerButton>
                 <FlexRow>
-                    {this.state.pageNr}
+                    {this.props.pageNr}
                 </FlexRow>
-                <PagerButton onClick={this.increasePageNr}>
+                <PagerButton onClick={this.props.increasePageNr}>
                     <PagerArrowRight src={polygon} />
                 </PagerButton>
             </FlexRow>

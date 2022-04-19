@@ -30,7 +30,8 @@ class App extends React.Component {
     queryInput: '',
     query: '',
     results: [],
-    api: 'http://localhost:8983/solr/games/'
+    api: 'http://localhost:8983/solr/games/',
+    pageNr: 1,
   }
 
   queryAction = (e) => {
@@ -46,8 +47,9 @@ class App extends React.Component {
   }
 
   resultsRender(prefix) {
+    let n = (this.state.pageNr - 1) * 10;
     return (
-      this.state.results.slice(0, 10).map((result, i) =>
+      this.state.results.slice(n, (n + 10)).map((result, i) =>
         <Article key={`${prefix} ${i}`} name={result.name[0]} tags={result.popular_tags[0]}
                  describe={result.game_description[0]} query={this.state.query} />)
     );
@@ -59,6 +61,30 @@ class App extends React.Component {
 
   desktopRender = () => {
     return desktopRender(this);
+  }
+
+  increasePageNr = () => {
+    let resultsLen = this.state.results.length;
+    let pageCount = 0;
+    if(resultsLen % 10 == 0)
+        pageCount = Math.floor(resultsLen / 10);
+    else pageCount = Math.floor(resultsLen / 10) + 1;
+
+    if(this.state.pageNr < pageCount) {
+        let newPageNr = this.state.pageNr + 1;
+        this.setState({
+            pageNr: newPageNr
+        });
+    }
+  }
+
+  decreasePageNr = () => {
+      if(this.state.pageNr > 1) {
+          let newPageNr = this.state.pageNr - 1;
+          this.setState({
+              pageNr: newPageNr
+          });
+      }
   }
 
   render() {

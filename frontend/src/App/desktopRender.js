@@ -43,7 +43,9 @@ const desktopRender = (component) => {
             {component.resultsRender('page1')}
           </FlexColumn>
           {(component.state.results.length !== 0) ? <Pager 
-          resultsLen={component.state.results.length} /> : ''}
+            pageNr={component.state.pageNr} 
+            decreasePageNr={component.decreasePageNr}
+            increasePageNr={component.increasePageNr} /> : ''}
         </FlexColumn>
     );
 }
