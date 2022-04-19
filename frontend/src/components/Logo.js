@@ -8,7 +8,7 @@ function Logo(props) {
        <FlexRow setDisplay={props.setDisplay} setBackgroundColor={props.setBackgroundColor} 
                 setWidth={props.setWidth} setHeight={props.setHeight}>
            <H1 as={'h1'} setFontSize={props.setFontSize}>
-               WikiSearch
+               GameSearch
            </H1>
        </FlexRow> 
     );

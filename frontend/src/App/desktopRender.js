@@ -18,7 +18,7 @@ const desktopRender = (component) => {
           <FlexRow alignmentY='flex-start' alignment='space-between' setGap={'32px'}>
             <Logo setDisplay={component.state.desktopView.miniLogoDisplay} 
                   setBackgroundColor={theme.colors.darkBlue} 
-                  setWidth={'124px'} setHeight={'72px'} setFontSize={'24px'} />
+                  setWidth={'144px'} setHeight={'72px'} setFontSize={'24px'} />
             <FlexColumn setGap={'20px'}>
               <Search setWidth={'940px'} setMaxWidth={component.state.desktopView.searchMaxWidth} 
                       setHeight={'64px'} action={(e) => component.queryActionDesktop(e)} 

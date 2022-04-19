@@ -16,11 +16,7 @@ function Search(props) {
                setWidth={props.setWidth} setHeight={props.setHeight} shadow
                setBorderRadius={'4px'} setBackgroundColor={theme.colors.light1}
                alignment='space-between' setMargin={props.setMargin}>
-          <Button setWidth={'32px'} setHeight={'100%'}
-                  setBackgroundColor={theme.colors.light3} setBorderRadius={'4px 0 0 4px'}>
-            <Icon src={polygon} setWidth={'12px'} setHeight={'8px'} />
-          </Button>
-          <Text as='input' setWidth={'75%'} setPadding={'4px'} 
+          <Text as='input' setWidth={'85%'} setPadding={'8px'} 
                 onChange={(e) => props.setQuery(e)}/>
           <Button setWidth={'32px'} setHeight={'100%'} action={props.action}
                   setBackgroundColor={theme.colors.light3} setBorderRadius={'0 4px 4px 0'}>
